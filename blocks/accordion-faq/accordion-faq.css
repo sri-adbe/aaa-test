@@ -1,0 +1,83 @@
+/* accordion-faq — stack of expandable question/answer items separated by
+   hairline rules, blue question on the left and a "+" marker on the right
+   that rotates into an "x" when open. The section's grey background and the
+   H2 above the block come from section-metadata (style: grey). */
+
+/* source: 70px between the FAQ heading and the first rule (the H2 margin
+   collapses with this margin) and 90px between the last rule and the band's end
+   (the grey section supplies 60px bottom padding) */
+.accordion-faq {
+  margin: 70px 0 30px;
+  color: #1b1b1b;
+}
+
+.accordion-faq .accordion-faq-item {
+  padding: 30px;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.accordion-faq .accordion-faq-item:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-faq .accordion-faq-item-label {
+  position: relative;
+  display: block;
+  padding: 0 40px 0 0;
+  color: #0f77cc;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+  list-style: none;
+  cursor: pointer;
+}
+
+.accordion-faq .accordion-faq-item-label::-webkit-details-marker {
+  display: none;
+}
+
+/* "+" toggle glyph; rotates 45deg into an "x" when the item is open */
+.accordion-faq .accordion-faq-item-label::after {
+  content: '+';
+  position: absolute;
+  top: -10px;
+  right: 0;
+  color: #0f77cc;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.1;
+  transition: transform 0.4s;
+}
+
+.accordion-faq .accordion-faq-item[open] > .accordion-faq-item-label::after {
+  transform: rotate(45deg);
+}
+
+.accordion-faq .accordion-faq-item-body {
+  padding: 30px 0 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  cursor: default;
+}
+
+.accordion-faq .accordion-faq-item-body > :first-child {
+  margin-top: 0;
+}
+
+.accordion-faq .accordion-faq-item-body > :last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  .accordion-faq .accordion-faq-item-label {
+    font-size: 20px;
+  }
+
+  .accordion-faq .accordion-faq-item-body {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

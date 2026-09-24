@@ -1,0 +1,135 @@
+/* cards-offer — row of linked partner-offer tiles: logo on top, bold title
+   and a one-line description below, centred. Values from the source
+   (northeast.aaa.com .offer-row-square) computed styles.
+   Mobile: 1 column; >= 600px: 2 columns; >= 992px: 4 columns. */
+
+/* source row is full-bleed (container-fluid, 10px / 20px side padding) */
+main > .section.cards-offer-container {
+  margin-top: 20px;
+}
+
+main > .section > .cards-offer-wrapper {
+  max-width: none;
+  padding: 0 10px;
+}
+
+.cards-offer {
+  margin: 0 0 10px;
+  color: #003665;
+}
+
+.cards-offer > ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 17px 2%;
+  box-sizing: border-box;
+  max-width: 1660px;
+  margin: 0 auto;
+  padding: 1%;
+  list-style: none;
+}
+
+.cards-offer .cards-offer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 50%);
+  text-align: center;
+}
+
+.cards-offer .cards-offer-card-image {
+  line-height: 0;
+}
+
+.cards-offer .cards-offer-card-image picture {
+  display: block;
+}
+
+.cards-offer .cards-offer-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.cards-offer .cards-offer-card-body {
+  flex: 1;
+  margin: 0 2.5%;
+  padding: 5px 10px;
+  color: #003665;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.cards-offer .cards-offer-card-body > * {
+  margin: 0;
+}
+
+.cards-offer .cards-offer-card-body > * + * {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.cards-offer .cards-offer-card-body strong {
+  font-weight: 700;
+}
+
+.cards-offer .cards-offer-card-body a:any-link,
+.cards-offer .cards-offer-card-body a:hover {
+  color: inherit;
+}
+
+/* whole tile is clickable: stretch the primary link over the card */
+.cards-offer .cards-offer-card.is-linked .cards-offer-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+@media (width >= 600px) {
+  main > .section > .cards-offer-wrapper {
+    padding: 0 20px;
+  }
+
+  .cards-offer > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 15px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-offer .cards-offer-card-body > * + * {
+    margin-top: 0;
+    font-size: 11px;
+  }
+}
+
+@media (width >= 992px) {
+  .cards-offer > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px 1%;
+    padding: 0.5%;
+  }
+
+  .cards-offer .cards-offer-card {
+    padding-bottom: 5px;
+  }
+}
+
+@media (width >= 1280px) {
+  .cards-offer .cards-offer-card-body {
+    font-size: 20px;
+  }
+
+  .cards-offer .cards-offer-card-body > * + * {
+    font-size: 14px;
+  }
+}
+
+@media (width >= 1600px) {
+  .cards-offer .cards-offer-card-body {
+    font-size: 18px;
+  }
+}

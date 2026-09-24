@@ -303,3 +303,90 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* blue: promo bar (AAA Northeast membership banner) */
+main > .section.blue {
+  background-color: #0f77cc;
+  color: #fff;
+  margin: 0;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+main > .section.blue .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 20px;
+  text-align: center;
+}
+
+main > .section.blue p {
+  margin: 0;
+}
+
+main > .section.blue a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+main > .section.blue p:last-child a:any-link {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #0f77cc;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* dark: quick CTA bar */
+main > .section.dark {
+  background-color: #033665;
+  color: #fff;
+  margin: 0;
+  padding: 20px 0;
+}
+
+main > .section.dark ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main > .section.dark .default-content-wrapper li a:any-link {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #0b5b9d;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+main > .section.dark .default-content-wrapper li:last-child a:any-link {
+  padding: 15px;
+  background-color: #c8271b;
+  color: #fff;
+}
+
+/* grey: FAQ band */
+main > .section.grey {
+  background-color: #e4e5e5;
+  margin: 0;
+  padding: 90px 0 60px;
+}
+
+main > .section.grey h2 {
+  color: #1b1b1b;
+  font-size: 26px;
+  font-weight: 500;
+}

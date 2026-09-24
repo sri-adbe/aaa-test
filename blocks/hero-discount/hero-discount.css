@@ -1,0 +1,223 @@
+/* hero-discount — full-bleed background photo with a translucent content
+   panel on top of it: H1, a row of circular icon shortcuts (image + label)
+   and a "View All Discounts" CTA (mobile only, as on the source).
+   Values come from the computed styles of northeast.aaa.com/discounts.html
+   (.widget-header). Source breakpoints: 768px (shortcuts in one row, CTA
+   hidden), 769px / 992px (icon + heading sizes), 1086px (fixed-height
+   hero with a 1120px panel). */
+
+/* Full-bleed: escape the section's margins and max-width. */
+main > .section.hero-discount-container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hero-discount-container .hero-discount-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-discount {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 21px 0 40px;
+  color: rgb(27 27 27);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+/* background photo (source: background-size cover, position 10% 50%) */
+.hero-discount .hero-discount-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-discount .hero-discount-background picture,
+.hero-discount .hero-discount-background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-discount .hero-discount-background img {
+  max-width: none;
+  object-fit: cover;
+  object-position: 10% 50%;
+}
+
+/* translucent panel */
+.hero-discount .hero-discount-panel {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px 0;
+  border-radius: 4px;
+  background-color: rgb(255 255 255 / 75%);
+  text-align: center;
+}
+
+.hero-discount .hero-discount-panel > :first-child {
+  margin-top: 0;
+}
+
+.hero-discount .hero-discount-panel > :last-child {
+  margin-bottom: 0;
+}
+
+/* heading (source: Roboto Slab 500, 36px / 53px, line-height 1.1) */
+.hero-discount h1 {
+  margin: 0;
+  padding: 20px 50px;
+  color: #000;
+  font-family: "Roboto Slab", var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* icon shortcuts: mobile = rows of three 120px tiles, centred */
+.hero-discount .hero-discount-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-discount .hero-discount-shortcut {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 0 15px 10px;
+}
+
+.hero-discount .hero-discount-shortcut-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.hero-discount .hero-discount-shortcut-icon {
+  display: block;
+  width: 90px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-discount .hero-discount-shortcut-icon picture,
+.hero-discount .hero-discount-shortcut-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-discount .hero-discount-shortcut-label {
+  display: block;
+  width: 100%;
+  color: #003665;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* CTA (source: .btn-style.btn-lg.btn-color-orange, shown below 768px only) */
+.hero-discount .hero-discount-cta {
+  margin: 10px 0 0;
+}
+
+.hero-discount .hero-discount-cta a:any-link {
+  box-sizing: border-box;
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 12px 35px;
+  border: 1px solid #c8271b;
+  border-radius: 4px;
+  background-color: #c8271b;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3333;
+  letter-spacing: 2.3px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.hero-discount .hero-discount-cta a:any-link:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* No background image: the panel is plain content. */
+.hero-discount.no-image .hero-discount-panel {
+  background-color: transparent;
+}
+
+@media (width >= 768px) {
+  .hero-discount h1 {
+    padding: 20px 120px;
+  }
+
+  /* all shortcuts on one row, evenly distributed across the panel */
+  .hero-discount .hero-discount-shortcuts {
+    grid-template-columns: none;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
+
+  .hero-discount .hero-discount-cta {
+    display: none;
+  }
+}
+
+@media (width > 768px) {
+  .hero-discount .hero-discount-shortcut-icon {
+    width: 100px;
+  }
+}
+
+@media (width >= 992px) {
+  .hero-discount {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .hero-discount h1 {
+    font-size: 53px;
+  }
+
+  .hero-discount .hero-discount-shortcut-icon {
+    width: 125px;
+  }
+}
+
+@media (width >= 1086px) {
+  .hero-discount {
+    min-height: 400px;
+  }
+
+  .hero-discount .hero-discount-panel {
+    max-width: 1120px;
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,192 @@
+/* cards-category — masonry of linked category photo tiles: photo fills the
+   tile, title overlaid and centred, description revealed on hover/focus.
+   Values extracted from northeast.aaa.com/discounts.html (.masonry-container).
+   Mobile: 1 column of 150px tiles; >= 768px (source breakpoint): rows of 2
+   250px tiles with the source's alternating widths. */
+
+/* source headings use Roboto Slab (the site only loads Roboto globally) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+
+.cards-category > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-category .cards-category-card {
+  position: relative;
+  display: grid;
+  height: 150px;
+  border-radius: 6px;
+  box-shadow: rgb(0 0 0 / 20%) 3px 2px 10px 0;
+  overflow: hidden;
+}
+
+/* photo and body share one cell so the body overlays the photo */
+.cards-category .cards-category-card-image,
+.cards-category .cards-category-card-body {
+  grid-area: 1 / 1;
+  min-height: 0;
+}
+
+.cards-category .cards-category-card-image {
+  position: relative;
+  line-height: 0;
+}
+
+.cards-category .cards-category-card-image picture,
+.cards-category .cards-category-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/* source tint: linear-gradient(to top, transparent, rgb(0 0 0 / 33.3%)) */
+.cards-category .cards-category-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0%), rgb(0 0 0 / 33.3%));
+}
+
+/* per-tile photo focus and tint, repeating every 8 tiles as on the source */
+.cards-category .cards-category-card:nth-child(8n + 1) .cards-category-card-image img,
+.cards-category .cards-category-card:nth-child(8n + 3) .cards-category-card-image img {
+  object-position: center center;
+}
+
+.cards-category .cards-category-card:nth-child(8n + 3) .cards-category-card-image::after,
+.cards-category .cards-category-card:nth-child(8n + 5) .cards-category-card-image::after,
+.cards-category .cards-category-card:nth-child(8n + 7) .cards-category-card-image::after {
+  background-image: linear-gradient(to top, rgb(0 0 0 / 33.3%), rgb(0 0 0 / 33.3%));
+}
+
+.cards-category .cards-category-card:nth-child(8n + 8) {
+  background-color: rgb(46 123 217);
+}
+
+.cards-category .cards-category-card:nth-child(8n + 8) .cards-category-card-image img {
+  object-position: 0 0;
+}
+
+.cards-category .cards-category-card:nth-child(8n + 8) .cards-category-card-image::after {
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0%), rgb(0 0 0 / 2%));
+}
+
+.cards-category .cards-category-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: rgb(255 255 255 / 0%);
+  text-align: center;
+  transition: 0.7s;
+}
+
+.cards-category .cards-category-card-title {
+  margin: 0;
+  color: #fff;
+  font-family: "Roboto Slab", var(--heading-font-family);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 1.8px;
+  text-shadow: rgb(0 0 0) 2px 2px 5px;
+  transition: 0.7s;
+}
+
+.cards-category .cards-category-card-title a:any-link,
+.cards-category .cards-category-card-title a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cards-category .cards-category-card-description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.7s ease-out;
+}
+
+.cards-category .cards-category-card-description > * {
+  margin: 0;
+  padding: 0 30px;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 1.2px;
+}
+
+.cards-category .cards-category-card:hover .cards-category-card-body,
+.cards-category .cards-category-card:focus-within .cards-category-card-body {
+  background-color: rgb(0 0 0 / 65%);
+}
+
+.cards-category .cards-category-card:hover .cards-category-card-title,
+.cards-category .cards-category-card:focus-within .cards-category-card-title {
+  padding: 15px;
+}
+
+.cards-category .cards-category-card:hover .cards-category-card-description,
+.cards-category .cards-category-card:focus-within .cards-category-card-description {
+  max-height: 200px;
+  opacity: 1;
+  transition: 0.7s ease-in;
+}
+
+/* no photo: plain text tile */
+.cards-category .cards-category-card.no-image {
+  height: auto;
+  min-height: 150px;
+  background-color: rgb(46 123 217);
+}
+
+/* whole tile is clickable: stretch the primary link over the card */
+.cards-category .cards-category-card.is-linked .cards-category-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+@media (width >= 768px) {
+  .cards-category > ul {
+    flex-flow: row wrap;
+    gap: 16px;
+  }
+
+  .cards-category .cards-category-card {
+    flex: 0 0 auto;
+    width: calc(50% - 8px);
+    height: 250px;
+  }
+
+  .cards-category .cards-category-card.no-image {
+    min-height: 250px;
+  }
+
+  /* source row proportions (tile widths per row of two) */
+  .cards-category .cards-category-card:nth-child(8n + 1) { width: calc(52.15% - 8px); }
+  .cards-category .cards-category-card:nth-child(8n + 2) { width: calc(47.85% - 8px); }
+  .cards-category .cards-category-card:nth-child(8n + 3) { width: calc(51.36% - 8px); }
+  .cards-category .cards-category-card:nth-child(8n + 4) { width: calc(48.64% - 8px); }
+  .cards-category .cards-category-card:nth-child(8n + 5) { width: calc(51.87% - 8px); }
+  .cards-category .cards-category-card:nth-child(8n + 6) { width: calc(48.13% - 8px); }
+  .cards-category .cards-category-card:nth-child(8n + 7) { width: calc(38.66% - 8px); }
+  .cards-category .cards-category-card:nth-child(8n + 8) { width: calc(61.34% - 8px); }
+
+  /* an odd tile out at the end spans the full row */
+  .cards-category .cards-category-card:last-child:nth-child(odd) {
+    width: 100%;
+  }
+}

@@ -4,7 +4,8 @@
       "previewOrg": "sri-adbe",
       "previewSite": "aaa-test",
       "contentHostUrl": "https://content.da.live/sri-adbe/aaa-test/",
-      "libraryUrl": "https://github.com/sri-adbe/aaa-test"
+      "libraryUrl": "https://github.com/sri-adbe/aaa-test",
+      "botProtected": true
     }
   }
 }

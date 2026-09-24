@@ -373,6 +373,140 @@
           ]
         }
       ]
+    },
+    {
+      "name": "discounts",
+      "urls": [
+        "https://northeast.aaa.com/discounts.html"
+      ],
+      "representativeUrl": "https://northeast.aaa.com/discounts.html",
+      "description": "AAA Northeast discounts landing page: hero with icon shortcuts, partner offer tiles, category masonry, savings tabs, FAQ accordion",
+      "blocks": [
+        {
+          "name": "hero-discount",
+          "instances": [
+            ".widget-header.widget-header-container-no-widget"
+          ]
+        },
+        {
+          "name": "cards-offer",
+          "instances": [
+            ".offer-row-square .offer-row-square-offers"
+          ]
+        },
+        {
+          "name": "cards-category",
+          "instances": [
+            ".masonry-container"
+          ]
+        },
+        {
+          "name": "tabs-savings",
+          "instances": [
+            ".tabbed-section-wrapper .tab-content"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            ".faqs-component-container .row"
+          ]
+        }
+      ],
+      "urlPattern": "/*",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Membership promo bar",
+          "selector": [
+            ".offer-decisioning"
+          ],
+          "style": "blue",
+          "blocks": [],
+          "defaultContent": [
+            ".notifications-bar"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Discounts hero",
+          "selector": [
+            ".html-source:has(.widget-header)"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-discount"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Quick CTA bar",
+          "selector": [
+            ".html-source:has(.sub-navigationdsktp)"
+          ],
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            ".sub-navigationdsktp .nav-item a:not([id^=\"b-test\"])"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Partner offer row",
+          "selector": [
+            ".offer-row-square.parbase"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-offer"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Popular Categories",
+          "selector": [
+            ".html-source:has(.masonry-container)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-category"
+          ],
+          "defaultContent": [
+            "h2.masonry-container-header",
+            ".new-cc-cta a"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Ways to Save",
+          "selector": [
+            ".tabbed-section.parbase"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-savings"
+          ],
+          "defaultContent": [
+            ".tabbed-section-wrapper h2.comp-header"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Frequently Asked Questions",
+          "selector": [
+            ".faq"
+          ],
+          "style": "grey",
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            ".faqs-component-container .horizontal-space2 h2"
+          ]
+        }
+      ]
     }
   ]
 }

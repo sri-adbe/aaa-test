@@ -1,0 +1,218 @@
+/* tabs-savings — centred uppercase tab bar above switchable savings panels;
+   each panel is copy (heading, bold lead, bullet lists, CTA) + an image.
+   Values extracted from northeast.aaa.com/discounts.html (.tabbed-section-wrapper).
+   Mobile: copy then image stacked; >= 900px: copy left (50%), image right. */
+
+.tabs-savings {
+  color: #1b1b1b;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* tab bar: full-bleed 1px rule like the source (container minus 10px gutters) */
+.tabs-savings .tabs-savings-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 5px;
+  margin-inline: calc((100% - (100vw - 20px)) / 2);
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs-savings .tabs-savings-tab {
+  flex: 0 0 auto;
+  margin: 0 2px -1px 0;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-bottom-width: 4px;
+  border-radius: 4px 4px 0 0;
+  background: none;
+  color: #303030;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.428571;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.28s ease-in-out;
+}
+
+.tabs-savings .tabs-savings-tab p {
+  margin: 0;
+}
+
+.tabs-savings .tabs-savings-tab[aria-selected='true'] {
+  border-bottom-color: #0f77cc;
+  background-color: #fff;
+  color: #555;
+  font-weight: 700;
+}
+
+.tabs-savings .tabs-savings-tab:hover {
+  color: #0f77cc;
+}
+
+/* panels */
+.tabs-savings .tabs-savings-panel {
+  padding: 20px 0 25px;
+}
+
+.tabs-savings .tabs-savings-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-savings .tabs-savings-panel-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tabs-savings .tabs-savings-panel-text {
+  padding: 80px 46px 30px;
+}
+
+.tabs-savings .tabs-savings-panel-text > :first-child {
+  margin-top: 0;
+}
+
+.tabs-savings .tabs-savings-panel-text > :last-child {
+  margin-bottom: 0;
+}
+
+.tabs-savings .tabs-savings-panel-text h2 {
+  margin: 0 0 30px;
+  color: #1b1b1b;
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1.1px;
+}
+
+.tabs-savings .tabs-savings-panel-text p {
+  margin: 0 0 30px;
+}
+
+.tabs-savings .tabs-savings-panel-text strong {
+  font-weight: 700;
+}
+
+.tabs-savings .tabs-savings-panel-text ul {
+  margin: 0;
+  padding-left: 25px;
+  list-style: none;
+}
+
+.tabs-savings .tabs-savings-panel-text ul + p {
+  margin-top: 20px;
+}
+
+.tabs-savings .tabs-savings-panel-text li::before {
+  content: '\2022\00a0';
+  margin-left: -23px;
+  padding-right: 10px;
+  color: #0f77cc;
+  font-weight: 600;
+}
+
+/* CTA: source uses a red, uppercase, letter-spaced button */
+.tabs-savings .tabs-savings-panel-text p.button-wrapper {
+  margin: 30px 0 36px;
+}
+
+main .tabs-savings .tabs-savings-panel a.button:any-link {
+  display: flex;
+  min-width: 200px;
+  margin: 0 10px 10px 0;
+  padding: 12px 35px;
+  border: 2px solid #c8271b;
+  border-radius: 1.5px;
+  background-color: #c8271b;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+main .tabs-savings .tabs-savings-panel a.button:hover,
+main .tabs-savings .tabs-savings-panel a.button:focus-visible {
+  border-color: #c8271b;
+  background-color: #c8271b;
+  color: #fff;
+}
+
+/* media */
+.tabs-savings .tabs-savings-panel-media {
+  padding: 0 6px 70px;
+  line-height: 0;
+}
+
+.tabs-savings .tabs-savings-panel-media > * {
+  margin: 0;
+}
+
+.tabs-savings .tabs-savings-panel-media > * + * {
+  margin-top: 16px;
+}
+
+.tabs-savings .tabs-savings-panel-media picture,
+.tabs-savings .tabs-savings-panel-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (width >= 900px) {
+  .tabs-savings {
+    font-size: 20px;
+  }
+
+  /* source container: min(viewport - 12px, 1428px) minus 20px gutters */
+  .tabs-savings .tabs-savings-list {
+    margin-inline: calc((100% - min(100vw - 52px, 1388px)) / 2);
+  }
+
+  .tabs-savings .tabs-savings-panel-content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    max-width: 1180px;
+    margin-inline: auto;
+  }
+
+  .tabs-savings .tabs-savings-panel-content.no-image {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tabs-savings .tabs-savings-panel-text {
+    padding: 90px 10px 60px 20px;
+  }
+
+  .tabs-savings .tabs-savings-panel-text h2 {
+    font-size: 36px;
+  }
+
+  .tabs-savings .tabs-savings-panel-text ul {
+    padding-left: 40px;
+  }
+
+  .tabs-savings .tabs-savings-panel-text p.button-wrapper {
+    margin-bottom: 12px;
+  }
+
+  main .tabs-savings .tabs-savings-panel a.button:any-link {
+    display: inline-flex;
+    min-width: 300px;
+  }
+
+  /* source: col-md-5 centred in the right half (41.667% of the row) */
+  .tabs-savings .tabs-savings-panel-media {
+    justify-self: center;
+    width: 83.333%;
+    padding: 90px 0;
+  }
+}

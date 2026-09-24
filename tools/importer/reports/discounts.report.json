@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://northeast.aaa.com/discounts.html",
+  "path": "discounts",
+  "timestamp": "2026-09-24T20:23:43.977Z",
+  "title": "Discounts | AAA Northeast",
+  "template": "discounts",
+  "blocks": [
+    "hero-discount",
+    "cards-offer",
+    "cards-category",
+    "tabs-savings",
+    "accordion-faq"
+  ]
+}

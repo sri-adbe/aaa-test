@@ -1,0 +1,28 @@
+{
+  "variantName": "cards-offer",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "imagePattern": "top-image",
+    "purpose": "partner offers",
+    "structure": "image + title + description",
+    "hasGrid": true,
+    "description": "Row of 4 linked tiles; partner logo on top, centred bold title and one-line description below; whole tile is clickable."
+  },
+  "contentPattern": {
+    "structure": "one row per tile: logo image | bold title link + description paragraph",
+    "rows": 2,
+    "buttonCount": 0,
+    "imageCount": 4,
+    "description": "4 linked tiles: partner logo + bold title + one-line description"
+  },
+  "sourceContext": {
+    "originUrl": "https://northeast.aaa.com/discounts.html",
+    "discoveredDuring": "site-migration page analysis",
+    "blockPosition": "top"
+  },
+  "options": [],
+  "memberVariantIds": ["cards-offer"]
+}
