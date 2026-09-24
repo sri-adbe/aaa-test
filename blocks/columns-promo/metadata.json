@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Side-by-side promotional banner on a colored (blue) background. One column holds a heading, subtext, a checkmark benefit list, and a CTA; the other holds an image. Stacks vertically on mobile, side-by-side at 900px.",
+  "contentPattern": "A single row with two columns: a text column (heading, subtext, bullet list, CTA link) and an image column. Image-only columns are tagged for ordering.",
+  "usage": "Promotional banners such as 'Your next Dream Vacation awaits' and partner/experience promos.",
+  "options": [],
+  "memberVariantIds": ["columns-promo"]
+}

@@ -1,0 +1,32 @@
+:root {
+  /* Fonts */
+  --heading-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  --body-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+
+  /* Colors */
+  --background-color: #fff;
+  --text-color: rgb(0 0 0 / 87%);
+  --link-color: #016bcd;
+  --link-hover-color: #005095;
+
+  /* Brand palette */
+  --brand-primary: #016bcd;
+  --brand-primary-dark: #005095;
+  --brand-promo-blue: #005095;
+  --brand-badge-red: #d93c1c;
+  --brand-savings-text: #3d4043;
+  --brand-card-radius: 12px;
+  --brand-card-shadow: rgb(8 17 34 / 4%) 0 -2px 1px 0, rgb(8 17 34 / 20%) 0 2px 4px 0;
+
+  /* Spacing */
+  --section-padding: 24px;
+  --content-max-width: 1200px;
+
+  /* Heading sizes */
+  --heading-size-xxl: 32px;
+  --heading-size-xl: 28px;
+  --heading-size-l: 22px;
+  --heading-size-m: 18px;
+  --heading-size-s: 16px;
+  --heading-size-xs: 14px;
+}

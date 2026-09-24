@@ -1,0 +1,142 @@
+/* columns-promo — side-by-side promotional banner.
+   Blue banner (#005095) with white text and rounded corners; an image fills
+   one side, promo copy (eyebrow, heading, subtext, checkmark benefits, CTA)
+   the other. Mobile-first: stacked with the image on top, side-by-side at
+   900px. Values extracted from the source AAA travel-deals promo cards. */
+
+.columns-promo {
+  background-color: var(--brand-promo-blue);
+  color: #fff;
+  border-radius: var(--brand-card-radius);
+  overflow: hidden;
+}
+
+/* row: image cell + text cell */
+.columns-promo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ordering: image column first (top on mobile, left on desktop) */
+.columns-promo > div > div {
+  order: 1;
+}
+
+.columns-promo > div > .columns-promo-img-col {
+  order: 0;
+}
+
+/* image cell */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-promo-img-col {
+  display: flex;
+}
+
+.columns-promo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* text cell — stack the copy with consistent spacing */
+.columns-promo > div > div:not(.columns-promo-img-col) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+/* reset inherited block margins inside the text stack */
+.columns-promo > div > div:not(.columns-promo-img-col) > * {
+  margin: 0;
+}
+
+/* eyebrow ("Limited-time offer") */
+.columns-promo em {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 90%);
+}
+
+/* heading */
+.columns-promo h2,
+.columns-promo h3 {
+  margin: 0;
+  color: #fff;
+  font-size: var(--heading-size-xl);
+  line-height: 1.2;
+}
+
+/* subtext + benefit copy */
+.columns-promo p {
+  color: #fff;
+}
+
+.columns-promo strong {
+  font-weight: 700;
+}
+
+/* benefit list (checkmarks) — layout only */
+.columns-promo ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columns-promo li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* CTA links — light button on the blue banner */
+.columns-promo a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: var(--brand-promo-blue);
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.columns-promo a:hover,
+.columns-promo a:focus-visible {
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .columns-promo > div {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* image column ~38% of the banner, full height */
+  .columns-promo > div > .columns-promo-img-col {
+    flex: 0 0 38%;
+    order: unset;
+  }
+
+  .columns-promo > div > div:not(.columns-promo-img-col) {
+    flex: 1;
+    order: unset;
+    padding: 40px;
+  }
+}

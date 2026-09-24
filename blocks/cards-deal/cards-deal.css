@@ -1,0 +1,164 @@
+/* cards-deal — promotional travel-deal cards.
+   Values extracted from source (getComputedStyle). Scoped to .cards-deal. */
+
+.cards-deal > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.cards-deal > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border-radius: var(--brand-card-radius);
+  box-shadow: var(--brand-card-shadow);
+  overflow: hidden;
+}
+
+/* Image ------------------------------------------------------------------ */
+.cards-deal-card-image {
+  position: relative;
+  line-height: 0;
+}
+
+.cards-deal-card-image img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* Eyebrow badge chip overlaid on the top-left of the card image */
+.cards-deal-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: var(--brand-badge-red);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+/* Body ------------------------------------------------------------------- */
+.cards-deal-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 8px;
+  padding: 16px;
+  margin: 0;
+}
+
+.cards-deal-card-body p {
+  margin: 0;
+  color: var(--brand-savings-text);
+}
+
+/* Card title — the first paragraph (usually a <strong> brand name) */
+.cards-deal-card-body > p:first-child {
+  margin: 0;
+  color: var(--brand-savings-text);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.cards-deal-card-body ul {
+  margin: 4px 0;
+  padding-left: 24px;
+  list-style: disc;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-deal-card-body li {
+  color: var(--brand-savings-text);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+
+/* Savings line — bumped toward the bottom, above the actions */
+.cards-deal-savings {
+  margin: 0;
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 700;
+  color: var(--brand-savings-text);
+}
+
+/* Actions ---------------------------------------------------------------- */
+.cards-deal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+/* When there is no savings line, still push actions to the bottom */
+.cards-deal-card-body > .cards-deal-actions:last-child {
+  margin-top: auto;
+}
+
+.cards-deal-actions a {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.cards-deal-actions a:hover {
+  text-decoration: none;
+}
+
+/* Primary (filled) CTA — e.g. "Book now" */
+.cards-deal-actions a.cards-deal-cta-primary {
+  border: 1px solid var(--brand-primary);
+  background-color: var(--brand-primary);
+  color: #fff;
+}
+
+.cards-deal-actions a.cards-deal-cta-primary:hover {
+  border-color: var(--brand-primary-dark);
+  background-color: var(--brand-primary-dark);
+  color: #fff;
+}
+
+/* Secondary (outlined) CTA — e.g. "Learn more" */
+.cards-deal-actions a.cards-deal-cta-secondary {
+  border: 1px solid var(--brand-primary);
+  background-color: var(--background-color);
+  color: var(--brand-primary);
+}
+
+.cards-deal-actions a.cards-deal-cta-secondary:hover {
+  border-color: var(--brand-primary-dark);
+  color: var(--brand-primary-dark);
+}
+
+/* Responsive ------------------------------------------------------------- */
+@media (width >= 600px) {
+  .cards-deal > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-deal > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

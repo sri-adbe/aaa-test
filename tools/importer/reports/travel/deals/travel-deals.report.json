@@ -1,0 +1,24 @@
+{
+  "status": "success",
+  "url": "https://www.ace.aaa.com/travel/deals/travel-deals.html?intcmp=nav:gotravel:bookatrip:traveldeals",
+  "path": "travel/deals/travel-deals",
+  "timestamp": "2026-09-24T15:05:13.038Z",
+  "title": "AAA Travel Deals | Vacation Packages & Special Offers from AAA Travel",
+  "template": "deals",
+  "blocks": [
+    "widget",
+    "widget",
+    "cards-deal",
+    "cards-deal",
+    "cards-deal",
+    "cards-deal",
+    "cards-deal",
+    "cards-deal",
+    "cards-deal",
+    "cards-deal",
+    "cards-deal",
+    "cards-feature",
+    "columns-promo",
+    "columns-promo"
+  ]
+}

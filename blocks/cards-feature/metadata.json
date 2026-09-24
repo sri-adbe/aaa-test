@@ -1,0 +1,10 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Grid of dark full-bleed feature cards (1 column mobile, 2 at 600px, 3 at 900px). Each card is a background image with a brand title, supporting text, and an optional CTA overlaid over the bottom.",
+  "contentPattern": "Repeating rows; each row = image cell (used as full-bleed background) + body cell with title, supporting text, and optional CTA link.",
+  "usage": "Cruise-line brand feature rows and other image-forward promotional cards distinct from the deal cards.",
+  "options": [],
+  "memberVariantIds": ["cards-feature"]
+}
