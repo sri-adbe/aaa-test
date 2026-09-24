@@ -1,6 +1,7 @@
-/* hero-login — full-bleed background image with an overlaid content card.
-   Structural layout only; brand colors come from the design pass. */
+/* hero-login — full-bleed lifestyle photo with an overlaid white content card.
+   Values extracted from source computed styles; brand tokens via CSS variables. */
 
+/* Full-width: escape the section's 1200px max-width. */
 .hero-login-container .hero-login-wrapper {
   max-width: unset;
   padding: 0;
@@ -11,14 +12,14 @@
   display: flex;
   align-items: center;
   min-height: 320px;
-  padding: 24px;
+  padding: 24px 16px;
 }
 
 /* Background image fills the block */
 .hero-login-image {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   line-height: 0;
 }
 
@@ -27,36 +28,104 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
 }
 
-/* Overlaid content card */
+/* Overlaid white content card */
 .hero-login-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 24px;
   width: 100%;
   max-width: 520px;
   padding: 24px;
+  border-radius: var(--brand-card-radius, 12px);
+  background-color: rgb(255 255 255 / 92%);
+  box-shadow: var(--brand-card-shadow);
 }
 
 .hero-login-content > * {
   margin: 0;
 }
 
-/* When there is no image, let text use the default color */
-.hero-login.no-image * {
+/* Heading — source desktop: 36px / 700, line-height 45px.
+   Scaled down on mobile (brand xxl mobile) to avoid overflow in the card. */
+.hero-login-content h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.15px;
   color: var(--text-color);
 }
 
-/* CTA row: promote consecutive button paragraphs to sit side by side */
-.hero-login-content p.button-container {
+/* Supporting paragraph — source: 16px / 400, line-height 24px.
+   The first bare paragraph in the card is the support copy. */
+.hero-login-content > p {
   margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+/* CTA row — source: flex, 16px gap, centered */
+.hero-login-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-login-cta p.button-container {
+  margin: 0;
+}
+
+/* Buttons inherit a.button.primary from styles.css (bg #016bcd, radius 6px,
+   padding 8px 16px, 16px/700). Source uses no text-transform / no elevation. */
+.hero-login-cta a.button:any-link {
+  margin: 0;
+  text-transform: none;
+  box-shadow: none;
+  white-space: normal;
+}
+
+/* Trailing "Not a member? Join AAA today" note */
+.hero-login-join {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.hero-login-join a:any-link {
+  color: #1c4da6;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* When there is no image, let text use the default color on a plain background */
+.hero-login.no-image {
+  background-color: var(--light-color);
+}
+
+.hero-login.no-image .hero-login-content {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 @media (width >= 900px) {
   .hero-login {
-    min-height: 420px;
+    min-height: 440px;
     padding: 40px 32px;
+  }
+
+  .hero-login-content h1 {
+    font-size: 36px;
+    line-height: 45px;
   }
 }

@@ -1,4 +1,8 @@
-/* cards-action — quick-action tile grid. Structural layout only. */
+/* cards-action — quick-action tile grid.
+ * Values extracted from source computed styles (ace.aaa.com self-serve,
+ * Insurance quick-actions row). See migration-work/cards-action-extracted.css.
+ * Light-blue tile, centered content, small blue icon, bold blue title link
+ * ending in " >", muted supporting sentence. 4-up desktop, responsive down. */
 
 .cards-action > ul {
   list-style: none;
@@ -12,27 +16,40 @@
 .cards-action > ul > li {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 20px;
-  background-color: var(--light-color);
-  border-radius: 8px;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background-color: #eff7fe;          /* light-blue tile (source) */
+  border-radius: var(--brand-card-radius, 12px);
+  box-shadow: var(--brand-card-shadow, rgb(8 17 34 / 4%) 0 -2px 1px 0, rgb(8 17 34 / 20%) 0 2px 4px 0);
+  text-align: center;
+  color: var(--text-color);
 }
 
-/* Small leading icon, not a full-bleed image */
+/* Small leading icon — base64 SVGs are dropped by the importer, so keep the
+ * cell graceful when it is empty (no reserved height, no broken-image box). */
 .cards-action-card-image {
   line-height: 0;
 }
 
-.cards-action-card-image img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+.cards-action-card-image:empty {
+  display: none;
 }
 
+.cards-action-card-image img,
+.cards-action-card-image svg {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+  color: #0c72df;                     /* icon blue (currentColor for inline SVG) */
+}
+
+/* Text cell */
 .cards-action-card-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 16px;
   margin: 0;
 }
 
@@ -40,14 +57,76 @@
   margin: 0;
 }
 
+/* Title — authored as <strong><a> …>; EDS decorateButtons() promotes it to
+ * a.button.primary inside p.button-wrapper. Reset the button chrome back to a
+ * bold blue text link (source: 18px/700, line-height 27px, #0c72df). */
+.cards-action p.button-wrapper {
+  margin: 0;
+}
+
+.cards-action-card-body a.button:any-link,
+.cards-action-card-body a.button.primary {
+  display: inline;
+  max-width: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  color: #0c72df;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.cards-action-card-body a.button:any-link:hover,
+.cards-action-card-body a.button.primary:hover {
+  background-color: transparent;
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Plain bold title fallback when buttonization does not run */
+.cards-action-card-body strong a:any-link {
+  color: #0c72df;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+/* Supporting sentence — muted gray; the authored link inherits the muted
+ * color so it reads as body copy, not a second blue link (source: 16px/400,
+ * line-height 24px, #3d4043). */
+.cards-action-card-body p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--brand-savings-text, #3d4043);
+}
+
+.cards-action-card-body p a:any-link {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.cards-action-card-body p a:any-link:hover {
+  text-decoration: underline;
+}
+
 @media (width >= 600px) {
   .cards-action > ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
 @media (width >= 900px) {
   .cards-action > ul {
     grid-template-columns: repeat(4, 1fr);
+    gap: 32px;                        /* column gap between tiles (source) */
   }
 }

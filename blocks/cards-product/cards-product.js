@@ -20,15 +20,19 @@ export default function decorate(block) {
     ul.append(li);
   });
 
-  // Group trailing single-link paragraphs into an actions row.
+  // Group trailing CTA paragraphs into an actions row. A CTA paragraph is one
+  // whose element children are all links — handles both a single link per
+  // paragraph and multiple links sharing one paragraph (e.g. quote + learn more).
   ul.querySelectorAll('.cards-product-card-body').forEach((bodyEl) => {
     const ctas = [...bodyEl.querySelectorAll(':scope > p')]
-      .filter((p) => p.children.length === 1 && p.firstElementChild
-        && p.firstElementChild.tagName === 'A');
+      .filter((p) => p.children.length >= 1
+        && [...p.children].every((c) => c.tagName === 'A'));
     if (ctas.length) {
       const actions = document.createElement('div');
       actions.className = 'cards-product-actions';
-      ctas.forEach((p) => actions.append(p.firstElementChild));
+      ctas.forEach((p) => {
+        while (p.firstElementChild) actions.append(p.firstElementChild);
+      });
       bodyEl.append(actions);
       ctas.forEach((p) => p.remove());
     }

@@ -1,36 +1,107 @@
-/* columns-selfserve — side-by-side image + text/CTA promo. Structural only. */
+/*
+ * columns-selfserve — side-by-side image + text/CTA promo.
+ * Source: AAA self-serve "File or track your claim online" card (#claims).
+ * A white card with rounded corners + shadow: photo on one side, a text panel
+ * (heading, description, bottom-right blue CTA) on the other. Side-by-side at
+ * 900px, stacked on mobile. All values from source getComputedStyle.
+ */
 
+/* Card container (the single row). Rounded, shadowed, clips the photo edges. */
 .columns-selfserve > div {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  background-color: var(--background-color);
+  border-radius: var(--brand-card-radius);
+  box-shadow: var(--brand-card-shadow);
+  overflow: hidden;
 }
 
-.columns-selfserve img {
-  width: 100%;
-}
-
-.columns-selfserve > div > div {
-  order: 1;
-}
-
+/* Image-only column — sits first (above on mobile, left on desktop). */
 .columns-selfserve > div > .columns-selfserve-img-col {
   order: 0;
 }
 
-.columns-selfserve > div > .columns-selfserve-img-col img {
+.columns-selfserve > div > .columns-selfserve-img-col,
+.columns-selfserve > div > .columns-selfserve-img-col picture {
   display: block;
 }
 
+.columns-selfserve > div > .columns-selfserve-img-col img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* source MuiCardMedia object-fit: cover */
+}
+
+/* Text column — heading, description, CTA pushed to the bottom-right. */
+.columns-selfserve > div > div {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px; /* source: stack 8px + content 16px */
+}
+
+.columns-selfserve h3 {
+  margin: 0;
+  color: var(--brand-savings-text);
+  font-size: var(--heading-size-xl); /* 28px */
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.columns-selfserve p {
+  margin: 0;
+  color: var(--brand-savings-text);
+  font-size: var(--body-font-size-m); /* 16px */
+  line-height: 1.5; /* 24/16 */
+}
+
+/* CTA: EDS decorates the lone <p><a> into p.button-container > a.button.
+   Source pins it to the bottom-right of the panel with a filled blue button. */
+.columns-selfserve .button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  margin-top: auto; /* pushes CTA to the bottom edge like the source card */
+}
+
+.columns-selfserve a.button:any-link {
+  margin: 0;
+  border: 1px solid var(--brand-primary);
+  border-radius: 6px;
+  padding: 8px 16px;
+  background-color: var(--brand-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.columns-selfserve a.button:any-link:hover,
+.columns-selfserve a.button:any-link:focus-visible {
+  border-color: var(--brand-primary-dark);
+  background-color: var(--brand-primary-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
 @media (width >= 900px) {
+  /* Side-by-side, equal halves, image stretches to panel height. */
   .columns-selfserve > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 32px;
+    flex-direction: row;
+    align-items: stretch;
   }
 
   .columns-selfserve > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns-selfserve > div > .columns-selfserve-img-col {
+    order: unset;
+  }
+
+  .columns-selfserve > div > .columns-selfserve-img-col,
+  .columns-selfserve > div > .columns-selfserve-img-col picture {
+    height: 100%;
   }
 }

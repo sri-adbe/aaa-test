@@ -1,4 +1,9 @@
-/* cards-faq — no-image FAQ/resource cards. Structural layout only. */
+/* cards-faq — no-image FAQ/resource cards.
+ * Source: self-serve Insurance tab, "Additional resources" row (4 cards).
+ * Bordered/rounded cards (shadow only, no border), bold title, muted
+ * description, solid blue "Learn more" CTA pinned to the card bottom.
+ * All values from source computed styles (migration-work/cards-faq-extracted.css).
+ */
 
 .cards-faq > ul {
   list-style: none;
@@ -12,10 +17,10 @@
 .cards-faq > ul > li {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 20px;
-  border: 1px solid #dadada;
-  border-radius: 8px;
+  gap: 16px;
+  padding: 16px;
+  border-radius: var(--brand-card-radius); /* 12px */
+  box-shadow: var(--brand-card-shadow);
   background-color: var(--background-color);
 }
 
@@ -23,7 +28,7 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  gap: 8px;
+  gap: 16px;
   margin: 0;
 }
 
@@ -31,20 +36,66 @@
   margin: 0;
 }
 
-/* Push a trailing CTA link to the bottom */
-.cards-faq-card-body > p:last-child {
+/* Title (b1Bold on source) */
+.cards-faq-card-body h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  color: var(--brand-savings-text); /* #3d4043 */
+}
+
+/* Description (b2Regular on source) */
+.cards-faq-card-body p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--brand-savings-text); /* #3d4043 */
+}
+
+/* Push the trailing CTA to the bottom of the card (source CardActions margin-top 24px) */
+.cards-faq-card-body > p:last-child,
+.cards-faq-card-body > .button-container:last-child {
   margin-top: auto;
   padding-top: 8px;
+}
+
+/* "Learn more" CTA — solid blue contained button (MuiButton-containedPrimary) */
+.cards-faq-card-body a,
+.cards-faq-card-body a.button:any-link {
+  display: inline-flex;
+  align-self: flex-start;
+  width: auto;
+  padding: 8px 16px;
+  border: 1px solid var(--brand-primary);
+  border-radius: 6px;
+  background-color: var(--brand-primary); /* #016bcd */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.cards-faq-card-body a:hover,
+.cards-faq-card-body a.button:any-link:hover {
+  border-color: var(--brand-primary-dark);
+  background-color: var(--brand-primary-dark); /* #005095 */
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (width >= 600px) {
   .cards-faq > ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
 @media (width >= 900px) {
   .cards-faq > ul {
     grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
   }
 }

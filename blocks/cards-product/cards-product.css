@@ -1,23 +1,29 @@
-/* cards-product — product cards with top image + actions. Structural only. */
+/* cards-product — product cards with a top image, title, description and two
+ * CTAs (filled "Get a quote" + outlined "Learn more"). Values extracted from
+ * the source (ace.aaa.com self-serve) computed styles. Scoped to .cards-product
+ * so the styling applies wherever the block is decorated. */
 
+/* Row container: mobile 1-up, tablet 2-up, desktop 3-up. */
 .cards-product > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 16px;
 }
 
+/* Card: white surface, rounded corners, subtle shadow (no border on source). */
 .cards-product > ul > li {
   display: flex;
   flex-direction: column;
-  border: 1px solid #dadada;
-  border-radius: 8px;
   background-color: var(--background-color);
+  border-radius: var(--brand-card-radius);
+  box-shadow: var(--brand-card-shadow);
   overflow: hidden;
 }
 
+/* Top image, 3:2 ratio, cover. */
 .cards-product-card-image {
   line-height: 0;
 }
@@ -28,37 +34,100 @@
   object-fit: cover;
 }
 
+/* Content body: 16px padding, 16px vertical rhythm, fills remaining height so
+ * the actions row aligns to the bottom across cards of differing text length. */
 .cards-product-card-body {
   display: flex;
-  flex-direction: column;
   flex: 1 1 auto;
-  gap: 8px;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px;
   margin: 0;
+  color: var(--brand-savings-text);
 }
 
 .cards-product-card-body > * {
   margin: 0;
 }
 
-/* Actions pinned to the bottom of the card */
+/* Title (first paragraph): 18px / 700. */
+.cards-product-card-body > p:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  color: var(--brand-savings-text);
+}
+
+/* Description paragraphs: 16px / 400. */
+.cards-product-card-body > p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--brand-savings-text);
+}
+
+/* Actions row: filled + outlined buttons, pinned to bottom of the card. */
 .cards-product-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 0;
+}
+
+/* Both CTAs share the same shape/size. */
+.cards-product-actions a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border: 1px solid var(--brand-primary);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+/* First CTA "Get a quote": filled blue. */
+.cards-product-actions a:any-link:first-child {
+  background-color: var(--brand-primary);
+  color: #fff;
+}
+
+.cards-product-actions a:any-link:first-child:hover,
+.cards-product-actions a:any-link:first-child:focus-visible {
+  background-color: var(--brand-primary-dark);
+  border-color: var(--brand-primary-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Second CTA "Learn more": outlined blue. */
+.cards-product-actions a:any-link:last-child {
+  background-color: var(--background-color);
+  color: var(--brand-primary);
+}
+
+.cards-product-actions a:any-link:last-child:hover,
+.cards-product-actions a:any-link:last-child:focus-visible {
+  background-color: var(--brand-primary);
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (width >= 600px) {
   .cards-product > ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
 @media (width >= 900px) {
   .cards-product > ul {
     grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 }

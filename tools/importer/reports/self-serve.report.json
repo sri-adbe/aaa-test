@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.ace.aaa.com/self-serve.html?intcmp=nav:findmore:aaabranches:selfservice",
+  "path": "self-serve",
+  "timestamp": "2026-09-24T17:38:39.887Z",
+  "title": "AAA Login | Manage Your Membership, Insurance & More Online",
+  "template": "self-serve",
+  "blocks": [
+    "hero-login",
+    "tabs-selfserve",
+    "cards-action",
+    "cards-action",
+    "cards-action",
+    "cards-action",
+    "cards-product",
+    "cards-product",
+    "columns-selfserve",
+    "cards-faq",
+    "cards-faq"
+  ]
+}

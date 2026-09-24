@@ -14,50 +14,76 @@
       "blocks": [
         {
           "name": "hero-login",
-          "instances": [".MuiCard-root.css-6cayp"]
+          "instances": [
+            ".MuiCard-root.css-6cayp"
+          ]
         },
         {
           "name": "tabs-selfserve",
-          "instances": ["#tabSectionOne"]
+          "instances": [
+            "#tabSectionOne"
+          ]
         },
         {
           "name": "cards-action",
-          "instances": [".css-mphph9 > .card-row:nth-of-type(1)"]
+          "instances": [
+            ".css-mphph9 > .card-row:nth-of-type(1)"
+          ]
         },
         {
           "name": "cards-product",
-          "instances": [".css-mphph9 > .card-row:nth-of-type(2)"]
+          "instances": [
+            ".css-mphph9 > .card-row:nth-of-type(2)"
+          ]
         },
         {
           "name": "columns-selfserve",
-          "instances": ["#claims"]
+          "instances": [
+            "#claims"
+          ]
         },
         {
           "name": "cards-faq",
-          "instances": [".css-mphph9 > .card-row:nth-of-type(4)"]
+          "instances": [
+            ".css-mphph9 > .card-row:nth-of-type(4)"
+          ]
         }
       ],
       "sections": [
         {
           "id": "rc1",
           "name": "hero-login",
-          "selector": [".MuiCard-root.css-6cayp"],
+          "selector": [
+            ".MuiCard-root.css-6cayp"
+          ],
           "style": null,
-          "blocks": ["hero-login"],
+          "blocks": [
+            "hero-login"
+          ],
           "defaultContent": []
         },
         {
           "id": "rc2",
           "name": "self-serve-tabs",
-          "selector": ["#tabSectionOne"],
+          "selector": [
+            "#tabSectionOne"
+          ],
           "style": null,
-          "blocks": ["tabs-selfserve", "cards-action", "cards-product", "columns-selfserve", "cards-faq"],
+          "blocks": [
+            "tabs-selfserve",
+            "cards-action",
+            "cards-product",
+            "columns-selfserve",
+            "cards-faq"
+          ],
           "defaultContent": []
         },
         {
           "id": "rc3",
           "name": "root-portal",
-          "selector": ["#root"],
+          "selector": [
+            "#root"
+          ],
           "style": null,
           "blocks": [],
           "defaultContent": []

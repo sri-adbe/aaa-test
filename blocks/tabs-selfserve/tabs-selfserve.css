@@ -1,37 +1,52 @@
-/* tabs-selfserve — tab switcher. Structural layout only; brand colors/pill
-   styling come from the design pass. */
+/* tabs-selfserve — AAA self-serve tab switcher.
+   Tab labels render as AAA pills: selected = filled blue with white text;
+   unselected = white background with blue border + blue text. Values from
+   source getComputedStyle (padding 16px 32px, radius 12px, font 24px/1.15,
+   weight 400, gap 16px, centered row). Mobile-first: pills wrap and shrink. */
 
 .tabs-selfserve .tabs-selfserve-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   max-width: 100%;
-  margin-bottom: 24px;
-  font-size: var(--body-font-size-s);
+  margin: 0 0 32px;
 }
 
 .tabs-selfserve .tabs-selfserve-list button {
-  flex: 0 0 max-content;
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 16px;
   margin: 0;
-  border: 1px solid #dadada;
-  border-radius: 6px;
-  padding: 12px 20px;
+  border: 1px solid var(--brand-primary);
+  border-radius: 12px;
+  padding: 10px 20px;
   background-color: var(--background-color);
-  color: initial;
-  font-weight: 700;
-  line-height: 1.25;
+  color: var(--brand-primary);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: none;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .tabs-selfserve .tabs-selfserve-list button p {
   margin: 0;
 }
 
+.tabs-selfserve .tabs-selfserve-list button:hover {
+  border-color: var(--brand-primary-dark);
+  color: var(--brand-primary-dark);
+}
+
 .tabs-selfserve .tabs-selfserve-list button[aria-selected='true'] {
+  border-color: var(--brand-primary);
+  background-color: var(--brand-primary);
+  color: #fff;
   cursor: initial;
 }
 
@@ -43,8 +58,14 @@
   display: none;
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
   .tabs-selfserve .tabs-selfserve-list {
-    font-size: var(--body-font-size-m);
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  .tabs-selfserve .tabs-selfserve-list button {
+    padding: 16px 32px;
+    font-size: 24px;
   }
 }
