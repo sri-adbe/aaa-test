@@ -303,6 +303,76 @@
         }
       ],
       "urlPattern": "/travel/deals/*"
+    },
+    {
+      "name": "adventures",
+      "urls": [
+        "https://wknd.site/us/en/adventures.html"
+      ],
+      "representativeUrl": "https://wknd.site/us/en/adventures.html",
+      "description": "WKND adventures listing: page title, hero teaser, category tabs with adventure card grids",
+      "blocks": [
+        {
+          "name": "hero-teaser",
+          "instances": [
+            ".teaser.cmp-teaser--hero"
+          ]
+        },
+        {
+          "name": "tabs-category",
+          "instances": [
+            ".tabs.panelcontainer .cmp-tabs__tablist"
+          ]
+        },
+        {
+          "name": "cards-adventure",
+          "instances": [
+            ".tabs.panelcontainer .cmp-tabs__tabpanel .cmp-image-list"
+          ]
+        }
+      ],
+      "urlPattern": "/us/en/*",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "page-title",
+          "selector": [
+            "main.cmp-layout-container--fixed:has(h1)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1.cmp-title__text"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "hero-teaser",
+          "selector": [
+            ".teaser.cmp-teaser--hero"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "current-adventures",
+          "selector": [
+            "main.cmp-layout-container--fixed:has(.tabs.panelcontainer)"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-category",
+            "cards-adventure"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--underline h2"
+          ]
+        }
+      ]
     }
   ]
 }

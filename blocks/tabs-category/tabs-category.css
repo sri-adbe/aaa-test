@@ -1,0 +1,61 @@
+/* tabs-category — category switcher over adopted cards-adventure grids.
+   Structural/functional only: left-aligned row of small uppercase text tabs,
+   no borders; the selected tab is a filled (black) chip with white text so
+   the active state is always distinguishable. Brand typography is left to
+   the design pass. */
+
+.tabs-category .tabs-category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 4px 8px;
+  margin: 0 0 16px;
+}
+
+.tabs-category .tabs-category-list button {
+  flex: 0 0 auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 8px 12px;
+  background-color: transparent;
+  color: inherit;
+  font-size: var(--body-font-size-xs);
+  line-height: 1.2;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.tabs-category .tabs-category-list button p {
+  margin: 0;
+}
+
+.tabs-category .tabs-category-list button:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 2px;
+}
+
+.tabs-category .tabs-category-list button[aria-selected='true'] {
+  background-color: #000;
+  color: #fff;
+  cursor: default;
+}
+
+.tabs-category .tabs-category-panel {
+  padding: 0;
+}
+
+.tabs-category .tabs-category-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-category .tabs-category-panel-content > :first-child {
+  margin-top: 0;
+}
+
+@media (width >= 900px) {
+  .tabs-category .tabs-category-list {
+    flex-wrap: nowrap;
+    gap: 8px 16px;
+  }
+}

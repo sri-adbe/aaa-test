@@ -1,0 +1,26 @@
+{
+  "variantName": "tabs-category",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "imagePattern": "noimg",
+    "purpose": "content category filter for a listing",
+    "structure": "tab list + panels",
+    "hasGrid": false,
+    "description": "Six small uppercase text tabs, left-aligned, no borders; active tab filled black with white text; each panel holds a 4-column card grid (the Nth following cards-adventure block is adopted into panel N)."
+  },
+  "contentPattern": {
+    "structure": "one row per tab: tab label | optional panel content; each panel's card grid is a separate cards-adventure block placed directly after this block, in tab order",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "sourceContext": {
+    "originUrl": "https://wknd.site/us/en/adventures.html",
+    "discoveredDuring": "site-migration page analysis",
+    "blockPosition": "middle"
+  },
+  "options": [],
+  "memberVariantIds": ["tabs-category"]
+}

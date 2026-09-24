@@ -1,0 +1,78 @@
+/* hero-teaser — full-bleed photo band with a wide content panel overlapping
+   its lower edge. Structural layout only; brand typography/colour is applied
+   by the design pass. Mobile: image then panel stacked. >= 900px: image and
+   panel share one grid cell, panel pinned to the bottom edge of the photo. */
+
+/* Full-bleed: escape the section's max-width. */
+.hero-teaser-container .hero-teaser-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-teaser {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.hero-teaser .hero-teaser-image {
+  line-height: 0;
+}
+
+.hero-teaser .hero-teaser-image picture,
+.hero-teaser .hero-teaser-image img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.hero-teaser .hero-teaser-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  margin: -32px 16px 0;
+  padding: 24px;
+  background-color: var(--background-color);
+}
+
+.hero-teaser .hero-teaser-content > :first-child {
+  margin-top: 0;
+}
+
+.hero-teaser .hero-teaser-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* No image: the panel is plain content, no overlap. */
+.hero-teaser.no-image .hero-teaser-content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (width >= 600px) {
+  .hero-teaser .hero-teaser-image picture,
+  .hero-teaser .hero-teaser-image img {
+    height: 480px;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-teaser .hero-teaser-image,
+  .hero-teaser .hero-teaser-content {
+    grid-area: 1 / 1;
+  }
+
+  .hero-teaser .hero-teaser-image picture,
+  .hero-teaser .hero-teaser-image img {
+    height: 640px;
+  }
+
+  .hero-teaser .hero-teaser-content {
+    place-self: end center;
+    width: calc(100% - 64px);
+    max-width: 1200px;
+    margin: 0;
+    padding: 32px 32px 56px;
+  }
+}

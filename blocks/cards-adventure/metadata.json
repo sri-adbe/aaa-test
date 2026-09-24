@@ -1,0 +1,26 @@
+{
+  "variantName": "cards-adventure",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "imagePattern": "multiple",
+    "purpose": "adventure listing tiles linking to detail pages",
+    "structure": "image + title + description",
+    "hasGrid": true,
+    "description": "4-column grid (~260px items, ~14px gutters); square-cornered ~260x200 images, no border/shadow; uppercase bold linked title; single-line ellipsis-truncated uppercase grey description."
+  },
+  "contentPattern": {
+    "structure": "one row per card: linked image | title link + description paragraph",
+    "buttonCount": 0,
+    "imageCount": 16
+  },
+  "sourceContext": {
+    "originUrl": "https://wknd.site/us/en/adventures.html",
+    "discoveredDuring": "site-migration page analysis",
+    "blockPosition": "middle"
+  },
+  "options": [],
+  "memberVariantIds": ["cards-adventure"]
+}
