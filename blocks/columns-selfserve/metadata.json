@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-selfserve",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Side-by-side promo: an image on one side and a text column (heading, description, CTA) on the other. Stacks vertically on mobile, side-by-side at 900px.",
+  "contentPattern": "A single row with two cells: an image-only cell (tagged for ordering) and a text cell (heading, description, CTA link).",
+  "usage": "Feature/promo rows inside the self-serve tab panels (e.g. 'File or track your claim online').",
+  "options": [],
+  "memberVariantIds": ["columns-selfserve"]
+}

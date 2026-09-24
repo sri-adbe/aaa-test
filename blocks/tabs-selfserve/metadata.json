@@ -1,0 +1,10 @@
+{
+  "variantName": "tabs-selfserve",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Horizontal row of pill/button tabs (Insurance, Membership, Travel, Financial), one selected at a time; the selected tab reveals its panel of content below. Tab buttons wrap on small screens.",
+  "contentPattern": "Each source row = tab label cell + tab panel content cell. Panels hold the per-category content (action tiles, product cards, promos, FAQs).",
+  "usage": "Account self-serve hub tab switcher grouping content by product category.",
+  "options": [],
+  "memberVariantIds": ["tabs-selfserve"]
+}

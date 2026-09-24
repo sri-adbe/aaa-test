@@ -1,0 +1,10 @@
+{
+  "variantName": "cards-action",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Row of 4 compact quick-action tiles on a light background (1 col mobile, 2 at 600px, 4 at 900px). Each tile: small icon, a bold blue title link (e.g. 'Manage my policy >'), and a short supporting sentence.",
+  "contentPattern": "Repeating rows; each row = optional icon cell + body cell (title link + short description).",
+  "usage": "Quick-action shortcut rows inside the self-serve tab panels.",
+  "options": [],
+  "memberVariantIds": ["cards-action"]
+}

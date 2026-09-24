@@ -1,0 +1,10 @@
+{
+  "variantName": "hero-login",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Full-bleed lifestyle background image with an overlaid content card (max ~520px) holding a heading, supporting paragraph, primary/secondary CTA buttons, and a secondary text link. Card left-aligned; falls back to default text color with no image.",
+  "contentPattern": "One row with an image-only cell (background) and a content cell (heading, paragraph, button links, a trailing 'Join' link).",
+  "usage": "Account login/hub hero banner.",
+  "options": [],
+  "memberVariantIds": ["hero-login"]
+}

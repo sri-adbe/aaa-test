@@ -1,0 +1,64 @@
+/* cards-product — product cards with top image + actions. Structural only. */
+
+.cards-product > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-product > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.cards-product-card-image {
+  line-height: 0;
+}
+
+.cards-product-card-image img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.cards-product-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 8px;
+  padding: 16px;
+  margin: 0;
+}
+
+.cards-product-card-body > * {
+  margin: 0;
+}
+
+/* Actions pinned to the bottom of the card */
+.cards-product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+@media (width >= 600px) {
+  .cards-product > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-product > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

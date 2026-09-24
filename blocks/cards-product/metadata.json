@@ -1,0 +1,10 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Row of 3 product cards (1 col mobile, 2 at 600px, 3 at 900px). Each card: top image, title, description, and two CTAs (e.g. 'Get a quote' filled + 'Learn more' outlined). Bordered, rounded corners.",
+  "contentPattern": "Repeating rows; each row = image cell + body cell (title, description, one or more CTA link paragraphs grouped into an actions row).",
+  "usage": "Insurance/product cards inside the self-serve tab panels (Auto, Home, Life, etc.).",
+  "options": [],
+  "memberVariantIds": ["cards-product"]
+}

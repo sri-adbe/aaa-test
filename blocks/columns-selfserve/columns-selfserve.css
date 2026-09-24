@@ -1,0 +1,36 @@
+/* columns-selfserve — side-by-side image + text/CTA promo. Structural only. */
+
+.columns-selfserve > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.columns-selfserve img {
+  width: 100%;
+}
+
+.columns-selfserve > div > div {
+  order: 1;
+}
+
+.columns-selfserve > div > .columns-selfserve-img-col {
+  order: 0;
+}
+
+.columns-selfserve > div > .columns-selfserve-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-selfserve > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 32px;
+  }
+
+  .columns-selfserve > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

@@ -4,13 +4,73 @@
   },
   "templates": [
     {
+      "name": "self-serve",
+      "urls": [
+        "https://www.ace.aaa.com/self-serve.html?intcmp=nav:findmore:aaabranches:selfservice"
+      ],
+      "representativeUrl": "https://www.ace.aaa.com/self-serve.html?intcmp=nav:findmore:aaabranches:selfservice",
+      "description": "AAA account self-serve hub: login hero banner over a lifestyle photo, and a 4-tab switcher (Insurance, Membership, Travel, Financial) whose panels hold quick-action tiles, product cards, image+text promos, and FAQ cards.",
+      "urlPattern": "/self-serve*",
+      "blocks": [
+        {
+          "name": "hero-login",
+          "instances": [".MuiCard-root.css-6cayp"]
+        },
+        {
+          "name": "tabs-selfserve",
+          "instances": ["#tabSectionOne"]
+        },
+        {
+          "name": "cards-action",
+          "instances": [".css-mphph9 > .card-row:nth-of-type(1)"]
+        },
+        {
+          "name": "cards-product",
+          "instances": [".css-mphph9 > .card-row:nth-of-type(2)"]
+        },
+        {
+          "name": "columns-selfserve",
+          "instances": ["#claims"]
+        },
+        {
+          "name": "cards-faq",
+          "instances": [".css-mphph9 > .card-row:nth-of-type(4)"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "hero-login",
+          "selector": [".MuiCard-root.css-6cayp"],
+          "style": null,
+          "blocks": ["hero-login"],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2",
+          "name": "self-serve-tabs",
+          "selector": ["#tabSectionOne"],
+          "style": null,
+          "blocks": ["tabs-selfserve", "cards-action", "cards-product", "columns-selfserve", "cards-faq"],
+          "defaultContent": []
+        },
+        {
+          "id": "rc3",
+          "name": "root-portal",
+          "selector": ["#root"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
       "name": "deals",
       "urls": [
         "https://www.ace.aaa.com/travel/deals/travel-deals.html?intcmp=nav:gotravel:bookatrip:traveldeals"
       ],
       "representativeUrl": "https://www.ace.aaa.com/travel/deals/travel-deals.html?intcmp=nav:gotravel:bookatrip:traveldeals",
-      "description": "AAA travel deals catalog page: booking widget, promotional deal-card rows grouped by theme, blue promo banners, image-backed cruise feature cards, and a travel assistant widget.",
-      "urlPattern": "/travel/deals/*",
+      "description": "To be named in naming step",
       "blocks": [
         {
           "name": "widget",
@@ -215,7 +275,8 @@
           "blocks": [],
           "defaultContent": []
         }
-      ]
+      ],
+      "urlPattern": "/travel/deals/*"
     }
   ]
 }

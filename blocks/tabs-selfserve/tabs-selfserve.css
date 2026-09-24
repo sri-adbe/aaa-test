@@ -1,0 +1,50 @@
+/* tabs-selfserve — tab switcher. Structural layout only; brand colors/pill
+   styling come from the design pass. */
+
+.tabs-selfserve .tabs-selfserve-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 100%;
+  margin-bottom: 24px;
+  font-size: var(--body-font-size-s);
+}
+
+.tabs-selfserve .tabs-selfserve-list button {
+  flex: 0 0 max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  padding: 12px 20px;
+  background-color: var(--background-color);
+  color: initial;
+  font-weight: 700;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tabs-selfserve .tabs-selfserve-list button p {
+  margin: 0;
+}
+
+.tabs-selfserve .tabs-selfserve-list button[aria-selected='true'] {
+  cursor: initial;
+}
+
+.tabs-selfserve .tabs-selfserve-panel {
+  padding: 0;
+}
+
+.tabs-selfserve .tabs-selfserve-panel[aria-hidden='true'] {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .tabs-selfserve .tabs-selfserve-list {
+    font-size: var(--body-font-size-m);
+  }
+}

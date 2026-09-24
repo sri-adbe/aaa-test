@@ -1,0 +1,62 @@
+/* hero-login — full-bleed background image with an overlaid content card.
+   Structural layout only; brand colors come from the design pass. */
+
+.hero-login-container .hero-login-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-login {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 320px;
+  padding: 24px;
+}
+
+/* Background image fills the block */
+.hero-login-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  line-height: 0;
+}
+
+.hero-login-image picture,
+.hero-login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlaid content card */
+.hero-login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  max-width: 520px;
+  padding: 24px;
+}
+
+.hero-login-content > * {
+  margin: 0;
+}
+
+/* When there is no image, let text use the default color */
+.hero-login.no-image * {
+  color: var(--text-color);
+}
+
+/* CTA row: promote consecutive button paragraphs to sit side by side */
+.hero-login-content p.button-container {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .hero-login {
+    min-height: 420px;
+    padding: 40px 32px;
+  }
+}
