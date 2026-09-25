@@ -1,0 +1,20 @@
+{
+  "total": 3,
+  "offset": 0,
+  "limit": 3,
+  "data": [
+    {
+      "title": "Blocks",
+      "path": "/block-collection/blocks"
+    },
+    {
+      "title": "Templates",
+      "path": "/block-collection/templates"
+    },
+    {
+      "title": "Icons",
+      "path": "/block-collection/icons"
+    }
+  ],
+  ":type": "sheet"
+}
