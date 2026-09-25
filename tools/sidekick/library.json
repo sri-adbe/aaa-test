@@ -5,15 +5,7 @@
   "data": [
     {
       "title": "Blocks",
-      "path": "/block-collection/blocks"
-    },
-    {
-      "title": "Templates",
-      "path": "/block-collection/templates"
-    },
-    {
-      "title": "Icons",
-      "path": "/block-collection/icons"
+      "path": "/blocks"
     }
   ],
   ":type": "sheet"
