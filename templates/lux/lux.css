@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap');
+
+/*
+ * lux template: editorial luxury-travel look, scoped to pages whose metadata
+ * has `Template: lux`. The site-wide header and footer are left untouched.
+ */
+body.lux main {
+  /* palette */
+  --lux-cream: #f9f8f4;
+  --lux-sand: #f0ece1;
+  --lux-ink: #1f1b16;
+  --lux-muted: #75706a;
+  --lux-terracotta: #c45539;
+  --lux-terracotta-dark: #a8452c;
+  --lux-line: #e6e1d6;
+  --lux-white: #fff;
+
+  /* type */
+  --lux-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --lux-sans: 'Inter', 'Helvetica Neue', arial, sans-serif;
+  --lux-display-size: 108px;
+  --lux-h2-size: 54px;
+  --lux-h3-size: 30px;
+  --lux-body-size: 14px;
+  --lux-small-size: 13px;
+  --lux-eyebrow-size: 11px;
+  --lux-eyebrow-tracking: 0.12em;
+  --lux-eyebrow-rule: 24px;
+
+  /* layout */
+  --lux-content-width: 1272px;
+  --lux-gutter: 24px;
+  --lux-section-space: 120px;
+  --lux-card-radius: 8px;
+  --lux-image-radius: 12px;
+
+  /* re-point the site tokens blocks rely on */
+  --background-color: var(--lux-cream);
+  --text-color: var(--lux-ink);
+  --link-color: var(--lux-terracotta);
+  --link-hover-color: var(--lux-terracotta-dark);
+
+  background-color: var(--lux-cream);
+  color: var(--lux-ink);
+  font-family: var(--lux-sans);
+  font-size: var(--lux-body-size);
+}
+
+body.lux main h1,
+body.lux main h2,
+body.lux main h3 {
+  font-family: var(--lux-serif);
+  font-weight: 400;
+  color: var(--lux-ink);
+  letter-spacing: -0.01em;
+}
+
+body.lux main h2 {
+  font-size: var(--lux-h2-size);
+  line-height: 1.1;
+}
+
+body.lux main h3 {
+  font-size: var(--lux-h3-size);
+  line-height: 1.2;
+}
+
+/* sections (kept low-specificity so blocks can run their section edge to edge) */
+body.lux main > :where(.section) {
+  margin: 0;
+  padding: var(--lux-section-space) 0;
+}
+
+body.lux main > :where(.section) > :where(div) {
+  max-width: var(--lux-content-width);
+  padding: 0 var(--lux-gutter);
+}
+
+body.lux main > .section.sand {
+  background-color: var(--lux-sand);
+}
+
+body.lux main > .section > div + div {
+  margin-top: 48px;
+}
+
+/* eyebrow: the short line authored just above a heading */
+body.lux main p:has(+ h1, + h2) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  color: var(--lux-terracotta);
+  font-size: var(--lux-eyebrow-size);
+  font-weight: 500;
+  letter-spacing: var(--lux-eyebrow-tracking);
+  text-transform: uppercase;
+}
+
+body.lux main p:has(+ h1, + h2)::before {
+  content: '';
+  width: var(--lux-eyebrow-rule);
+  height: 1px;
+  background-color: currentcolor;
+}
+
+/* section intro: eyebrow + heading on the left, short intro on the right */
+body.lux main .default-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 310px);
+  column-gap: 48px;
+  align-items: end;
+}
+
+body.lux main .default-content-wrapper > * {
+  grid-column: 1;
+  margin: 0;
+}
+
+body.lux main .default-content-wrapper > h2 + p {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  color: var(--lux-muted);
+  font-size: var(--lux-small-size);
+  line-height: 1.6;
+}
+
+/* divider: serif caption between two rules */
+body.lux main > .section.divider {
+  padding: 0 0 12px;
+}
+
+body.lux main > .section.divider .default-content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+body.lux main > .section.divider p {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--lux-terracotta);
+  font-family: var(--lux-serif);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.lux main > .section.divider p::before,
+body.lux main > .section.divider p::after {
+  content: '';
+  width: 64px;
+  height: 1px;
+  background-color: var(--lux-line);
+}
+
+/* centered: intro stacked and centered */
+body.lux main > .section.centered .default-content-wrapper {
+  display: block;
+  text-align: center;
+}
+
+body.lux main > .section.centered p:has(+ h1, + h2) {
+  justify-content: center;
+}
+
+/* buttons */
+body.lux main a.button:any-link {
+  border-radius: 0;
+  padding: 16px 38px;
+  font-family: var(--lux-sans);
+  font-size: var(--lux-eyebrow-size);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.lux main a.button.primary,
+body.lux main a.button.accent {
+  border-color: var(--lux-terracotta);
+  background-color: var(--lux-terracotta);
+  color: var(--lux-white);
+}
+
+body.lux main a.button.primary:hover,
+body.lux main a.button.primary:focus-visible,
+body.lux main a.button.accent:hover,
+body.lux main a.button.accent:focus-visible {
+  border-color: var(--lux-terracotta-dark);
+  background-color: var(--lux-terracotta-dark);
+  color: var(--lux-white);
+}
+
+body.lux main a.button.secondary {
+  border-color: var(--lux-terracotta);
+  background-color: transparent;
+  color: var(--lux-terracotta);
+}
+
+@media (width < 900px) {
+  body.lux main {
+    --lux-display-size: 52px;
+    --lux-h2-size: 38px;
+    --lux-h3-size: 24px;
+    --lux-section-space: 72px;
+    --lux-gutter: 20px;
+  }
+
+  body.lux main .default-content-wrapper {
+    display: block;
+  }
+
+  body.lux main .default-content-wrapper > h2 + p {
+    margin-top: 16px;
+  }
+
+  body.lux main > .section.divider .default-content-wrapper {
+    display: flex;
+  }
+
+  body.lux main > .section.divider p::before,
+  body.lux main > .section.divider p::after {
+    width: 32px;
+  }
+}

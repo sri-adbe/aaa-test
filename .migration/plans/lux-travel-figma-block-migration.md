@@ -1,12 +1,7 @@
 # Figma Design to Block Migration Plan
 
-## Status: Ready to run. Click **Execute Plan** to start
-Typing "go ahead" in the chat keeps this conversation in planning mode, where I can only read files and can't make changes. To start the work, do one of these:
-
-- **Click the "Execute Plan" button** at the bottom of the chat panel, next to Send. It appears now because this plan is ready. **(Recommended)**
-- Or switch the **Quick / Plan** toggle at the bottom of the chat panel to **Quick**, then send "go ahead" again.
-
-As soon as one of those happens, I'll begin with step 1.
+## Status: Ready. Waiting for you to click **Execute Plan**
+You said you'll click **Execute Plan**. It's next to the Send button at the bottom of the chat panel. Typing "go ahead" doesn't start the work, so please use the button. After you click it, I'll start with step 1.
 
 ## Overview
 Build an Edge Delivery Services block from the Figma Make design **"lux-travel-2.5.1"** (https://www.figma.com/make/jMDlvKyPEcgXDLdxeKXpEy/lux-travel-2.5.1). The block will match the design's structure, content and styling, and I'll check it in the local preview.
@@ -38,7 +33,7 @@ Build an Edge Delivery Services block from the Figma Make design **"lux-travel-2
 - Should a matching existing block get a variant, or should this be a standalone block? I'll recommend one based on how similar they are.
 
 ## Checklist
-- [ ] **You:** click **Execute Plan**, or switch the Quick / Plan toggle to Quick and send your message again
+- [ ] **You:** click **Execute Plan** (next to Send)
 - [ ] Create `.agents/settings.json` to turn on the Figma add-on (already approved by you)
 - [ ] **You:** send one more message (for example "continue") so the add-on's tools load
 - [ ] Read the lux-travel-2.5.1 design with the Figma tools

@@ -1,0 +1,111 @@
+.cards-curator {
+  --cards-curator-gap: 20px;
+  --cards-curator-frame: 10px;
+  --cards-curator-bg: var(--lux-cream, #f9f8f4);
+  --cards-curator-image-ratio: 376 / 258;
+  --cards-curator-name-size: var(--lux-h3-size, 28px);
+}
+
+.cards-curator > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--cards-curator-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-curator > ul > li {
+  display: flex;
+  flex-direction: column;
+  padding: var(--cards-curator-frame);
+  background-color: var(--cards-curator-bg);
+}
+
+.cards-curator .cards-curator-card-image {
+  overflow: hidden;
+  border-radius: var(--lux-card-radius, 8px);
+  line-height: 0;
+}
+
+.cards-curator .cards-curator-card-image img {
+  width: 100%;
+  aspect-ratio: var(--cards-curator-image-ratio);
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cards-curator > ul > li:hover .cards-curator-card-image img {
+  transform: scale(1.03);
+}
+
+.cards-curator .cards-curator-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px 10px 18px;
+}
+
+.cards-curator .cards-curator-card-body > * {
+  margin: 0;
+}
+
+.cards-curator .cards-curator-card-body p {
+  color: var(--lux-muted, #75706a);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cards-curator .cards-curator-card-body p.cards-curator-eyebrow {
+  margin-bottom: 8px;
+  color: var(--lux-terracotta, #c45539);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--lux-eyebrow-tracking, 0.12em);
+  text-transform: uppercase;
+}
+
+.cards-curator .cards-curator-card-body h3 {
+  margin-bottom: 8px;
+  font-size: var(--cards-curator-name-size);
+}
+
+.cards-curator .cards-curator-card-body p.cards-curator-link {
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.cards-curator p.cards-curator-link a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--lux-terracotta, #c45539);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--lux-eyebrow-tracking, 0.12em);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cards-curator p.cards-curator-link a:any-link::after {
+  content: '→';
+  font-size: 12px;
+  letter-spacing: 0;
+  transition: transform 0.2s ease;
+}
+
+.cards-curator p.cards-curator-link a:hover::after {
+  transform: translateX(4px);
+}
+
+@media (width >= 600px) {
+  .cards-curator > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-curator > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

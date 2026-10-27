@@ -1,0 +1,12 @@
+{
+  "variantName": "hero-lux",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Full-bleed photo hero with a large centered serif headline, short subline and a terracotta CTA button.",
+  "contentPattern": "Row 1: image. Row 2: H1 + subline paragraph + bold CTA link.",
+  "usage": "Lux template page hero.",
+  "options": [],
+  "memberVariantIds": [
+    "hero-lux"
+  ]
+}

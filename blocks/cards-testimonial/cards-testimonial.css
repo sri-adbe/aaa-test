@@ -1,0 +1,62 @@
+.cards-testimonial {
+  --cards-testimonial-gap: 16px;
+  --cards-testimonial-border: var(--lux-line, #e6e1d6);
+  --cards-testimonial-featured-bg: var(--lux-sand, #f0ece1);
+  --cards-testimonial-quote-size: 22px;
+}
+
+.cards-testimonial > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--cards-testimonial-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-testimonial > ul > li {
+  border: 1px solid var(--cards-testimonial-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* the middle card is featured; any card lights up on hover */
+.cards-testimonial > ul > li:nth-child(3n + 2),
+.cards-testimonial > ul > li:hover {
+  border-color: var(--cards-testimonial-featured-bg);
+  background-color: var(--cards-testimonial-featured-bg);
+}
+
+.cards-testimonial .cards-testimonial-card-body {
+  padding: 34px 26px 44px;
+}
+
+.cards-testimonial figure,
+.cards-testimonial blockquote,
+.cards-testimonial .cards-testimonial-card-body p {
+  margin: 0;
+}
+
+.cards-testimonial p.cards-testimonial-quote {
+  color: var(--lux-ink, #1f1b16);
+  font-family: var(--lux-serif, serif);
+  font-size: var(--cards-testimonial-quote-size);
+  line-height: 1.2;
+}
+
+.cards-testimonial p.cards-testimonial-quote + p.cards-testimonial-quote {
+  margin-top: 12px;
+}
+
+.cards-testimonial p.cards-testimonial-attribution {
+  margin-top: 26px;
+  color: var(--lux-muted, #75706a);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (width >= 900px) {
+  .cards-testimonial > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

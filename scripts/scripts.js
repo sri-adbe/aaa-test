@@ -5,6 +5,7 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
+  getMetadata,
   waitForFirstImage,
   loadSection,
   loadSections,
@@ -405,6 +406,23 @@ export function decorateMain(main) {
   decorateButtons(main);
 }
 
+// page templates with their own stylesheet in /templates/{name}/{name}.css
+const TEMPLATES = ['lux'];
+
+/**
+ * Loads the stylesheet for the page's `template` metadata, if it has one.
+ */
+async function loadTemplate() {
+  const template = toClassName(getMetadata('template'));
+  if (!TEMPLATES.includes(template)) return;
+  try {
+    await loadCSS(`${window.hlx.codeBasePath}/templates/${template}/${template}.css`);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(`Template ${template} failed to load`, error);
+  }
+}
+
 /**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
@@ -412,6 +430,7 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  await loadTemplate();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

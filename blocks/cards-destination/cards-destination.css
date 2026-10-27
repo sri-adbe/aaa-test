@@ -1,0 +1,66 @@
+.cards-destination {
+  --cards-destination-gap-x: 24px;
+  --cards-destination-gap-y: 40px;
+  --cards-destination-image-ratio: 602 / 350;
+  --cards-destination-name-size: 31px;
+}
+
+.cards-destination > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--cards-destination-gap-y) var(--cards-destination-gap-x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-destination .cards-destination-card-image {
+  overflow: hidden;
+  border-radius: var(--lux-image-radius, 12px);
+  line-height: 0;
+}
+
+.cards-destination .cards-destination-card-image img {
+  width: 100%;
+  aspect-ratio: var(--cards-destination-image-ratio);
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.cards-destination > ul > li:hover .cards-destination-card-image img {
+  transform: scale(1.03);
+}
+
+.cards-destination .cards-destination-card-body {
+  padding-top: 22px;
+}
+
+.cards-destination .cards-destination-card-body > * {
+  margin: 0;
+}
+
+.cards-destination .cards-destination-card-body p {
+  color: var(--lux-muted, #75706a);
+  font-size: var(--lux-small-size, 13px);
+  line-height: 1.5;
+}
+
+.cards-destination .cards-destination-card-body p.cards-destination-eyebrow {
+  margin-bottom: 6px;
+  color: var(--lux-terracotta, #c45539);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--lux-eyebrow-tracking, 0.12em);
+  text-transform: uppercase;
+}
+
+.cards-destination .cards-destination-card-body h3 {
+  margin-bottom: 10px;
+  font-size: var(--cards-destination-name-size);
+}
+
+@media (width >= 600px) {
+  .cards-destination > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
