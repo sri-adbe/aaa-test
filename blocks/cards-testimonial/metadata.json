@@ -1,0 +1,12 @@
+{
+  "variantName": "cards-testimonial",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Three-up bordered quote cards with serif quotes and small uppercase attributions; the middle card is featured on a sand background.",
+  "contentPattern": "Repeating rows; each row = one cell with quote paragraph(s) + attribution paragraph.",
+  "usage": "Client testimonials.",
+  "options": [],
+  "memberVariantIds": [
+    "cards-testimonial"
+  ]
+}

@@ -5,7 +5,7 @@
    250px tiles with the source's alternating widths. */
 
 /* source headings use Roboto Slab (the site only loads Roboto globally) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 
 .cards-category > ul {
   display: flex;

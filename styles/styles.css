@@ -331,6 +331,16 @@ main > .section.blue a:any-link {
   text-decoration: none;
 }
 
+/* the bold promo line is buttonized by decorateButtons; render it as plain text */
+main > .section.blue a.button:any-link {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-weight: 700;
+  white-space: normal;
+}
+
 main > .section.blue p:last-child a:any-link {
   display: inline-block;
   padding: 5px 10px;
@@ -389,4 +399,52 @@ main > .section.grey h2 {
   color: #1b1b1b;
   font-size: 26px;
   font-weight: 500;
+}
+
+@media (width >= 900px) {
+  main > .section.grey h2 {
+    font-size: 36px;
+  }
+}
+
+/* discounts page: centred section headings and CTA around the category and savings blocks */
+main > .section.cards-category-container > .default-content-wrapper,
+main > .section.tabs-savings-container > .default-content-wrapper {
+  text-align: center;
+}
+
+main > .section.cards-category-container > .default-content-wrapper h2,
+main > .section.tabs-savings-container > .default-content-wrapper h2 {
+  margin: 0 0 30px;
+  color: #1b1b1b;
+  font-family: "Roboto Slab", var(--heading-font-family);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+main > .section.cards-category-container > .default-content-wrapper h2 {
+  color: #003665;
+}
+
+main > .section.cards-category-container > .default-content-wrapper p:last-child a:any-link {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+  max-width: 100%;
+  margin-top: 30px;
+  border-radius: 1.5px;
+  padding: 12px 35px;
+  background-color: #c8271b;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (width >= 900px) {
+  main > .section.cards-category-container > .default-content-wrapper h2,
+  main > .section.tabs-savings-container > .default-content-wrapper h2 {
+    font-size: 36px;
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "variantName": "cards-curator",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Three-up profile cards on a cream frame: rounded portrait, uppercase location eyebrow, serif name, one-line bio and an uppercase \"Meet\" link with arrow.",
+  "contentPattern": "Repeating rows; each row = image cell + body cell (eyebrow paragraph, H3, bio paragraph, link paragraph).",
+  "usage": "Travel curator / advisor introductions.",
+  "options": [],
+  "memberVariantIds": [
+    "cards-curator"
+  ]
+}

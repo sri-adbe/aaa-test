@@ -1,0 +1,12 @@
+{
+  "variantName": "cards-service",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Four-up numbered service tiles on cream with serif index (01-04), corner arrow, serif title and short description. No images.",
+  "contentPattern": "Repeating rows; each row = one cell with H3 + description (optional authored number paragraph).",
+  "usage": "Service / offering highlights.",
+  "options": [],
+  "memberVariantIds": [
+    "cards-service"
+  ]
+}

@@ -1,0 +1,86 @@
+.hero-lux {
+  --hero-lux-height: 900px;
+  --hero-lux-overlay: rgb(20 14 8 / 18%);
+  --hero-lux-text: var(--lux-white, #fff);
+  --hero-lux-title-size: var(--lux-display-size, 108px);
+  --hero-lux-subline-size: 27px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--hero-lux-height);
+  overflow: hidden;
+  color: var(--hero-lux-text);
+  text-align: center;
+}
+
+.hero-lux .hero-lux-image {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-lux .hero-lux-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--hero-lux-overlay);
+}
+
+.hero-lux .hero-lux-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-lux .hero-lux-content {
+  position: relative;
+  max-width: 960px;
+  padding: 0 24px;
+}
+
+.hero-lux.no-image {
+  background-color: var(--lux-ink, #1f1b16);
+}
+
+.hero-lux .hero-lux-content h1 {
+  margin: 0;
+  color: var(--hero-lux-text);
+  font-size: var(--hero-lux-title-size);
+  line-height: 0.96;
+  text-wrap: balance;
+}
+
+.hero-lux .hero-lux-content p {
+  margin: 0;
+}
+
+.hero-lux .hero-lux-content h1 + p {
+  margin-top: 36px;
+  font-family: var(--lux-serif, serif);
+  font-size: var(--hero-lux-subline-size);
+  letter-spacing: 0.01em;
+  opacity: 0.9;
+}
+
+.hero-lux .hero-lux-content p.button-wrapper {
+  margin-top: 40px;
+}
+
+/* the hero section runs edge to edge */
+main > .section.hero-lux-container {
+  padding: 0;
+}
+
+main > .section > .hero-lux-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+@media (width < 900px) {
+  .hero-lux {
+    --hero-lux-height: 620px;
+    --hero-lux-subline-size: 18px;
+  }
+}

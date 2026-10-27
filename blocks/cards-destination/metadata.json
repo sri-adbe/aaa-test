@@ -1,0 +1,12 @@
+{
+  "variantName": "cards-destination",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Two-up grid of large rounded destination photos, each captioned with a country eyebrow, serif name and short description.",
+  "contentPattern": "Repeating rows; each row = image cell + body cell (eyebrow paragraph, H3, description paragraph).",
+  "usage": "Featured destinations.",
+  "options": [],
+  "memberVariantIds": [
+    "cards-destination"
+  ]
+}

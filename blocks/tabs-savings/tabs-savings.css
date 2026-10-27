@@ -32,7 +32,7 @@
   font-family: var(--body-font-family);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.428571;
+  line-height: 1.4286;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
@@ -83,7 +83,7 @@
 .tabs-savings .tabs-savings-panel-text h2 {
   margin: 0 0 30px;
   color: #1b1b1b;
-  font-family: var(--heading-font-family);
+  font-family: "Roboto Slab", var(--heading-font-family);
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;

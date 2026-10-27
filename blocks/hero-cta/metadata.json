@@ -1,0 +1,12 @@
+{
+  "variantName": "hero-cta",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Closing call-to-action band: washed-out background photo behind a centered eyebrow, H2, CTA button and small print.",
+  "contentPattern": "Row 1: background image. Row 2: eyebrow paragraph, H2, bold CTA link, note paragraph.",
+  "usage": "End-of-page conversion band on lux template pages.",
+  "options": [],
+  "memberVariantIds": [
+    "hero-cta"
+  ]
+}

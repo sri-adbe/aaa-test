@@ -14,7 +14,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 const OPTION_CLASSES = [];
 
 // the source hero heading uses Roboto Slab; the site itself only loads Roboto
-const HEADING_FONT_URL = 'https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap';
+const HEADING_FONT_URL = 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap';
 
 function loadHeadingFont() {
   if (document.querySelector(`link[href="${HEADING_FONT_URL}"]`)) return;
